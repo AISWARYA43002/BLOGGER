@@ -23,7 +23,7 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use(function (config) {
-    const accessToken = sessionStorage.getItem('logintoken'); // corrected variable name
+    const accessToken = localStorage.getItem('logintoken'); // corrected variable name
     if (accessToken) {
         if (config) {
             config.headers.token = accessToken;
